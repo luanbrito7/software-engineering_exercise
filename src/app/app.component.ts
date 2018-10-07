@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+
+import { Pessoa } from './pessoa';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exercise';
+  title = 'My project!';
+  pessoa: Pessoa = {nome: "", cpf: "", email: ""};
+  pessoas: Pessoa[] = [];
+
+   gravar(a: Pessoa): void {
+     this.pessoas.push(a);
+     this.pessoa = {nome: "", cpf: "", email: ""};
+   }
 }
